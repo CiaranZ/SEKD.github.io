@@ -186,19 +186,19 @@
   }
   </script>
 
-  <!-- 自定义样式：摘要开头的图片 -->
+  <!-- 自定义样式：teaser 图片（摘要章节前） -->
   <style>
-    .abstract-figure-wrapper {
+    .teaser-figure-wrapper {
       max-width: 900px;
       margin: 0 auto 1.5rem;
     }
-    .abstract-figure {
+    .teaser-figure {
       width: 100%;
       height: auto;
       display: block;
       border-radius: 12px; /* 想要直角就把这一行删掉 */
     }
-    .abstract-caption {
+    .teaser-caption {
       text-align: center;
       font-size: 0.95rem;
       color: #555;
@@ -258,6 +258,7 @@
   </div>
 
   <main id="main-content">
+    <!-- 顶部 hero：标题、作者、按钮 -->
     <section class="hero">
       <div class="hero-body">
         <div class="container is-max-desktop">
@@ -291,7 +292,6 @@
                 <span class="author-block">
                   <sup>1</sup> Department of Computer, North China Electric Power University, Baoding, China<br>
                   <sup>2</sup> School of Information and Intelligent Science, Donghua University, Shanghai, China<br>
-                  arXiv preprint arXiv:2511.18415 (2025)
                 </span>
                 <span class="eql-cntrb">
                   <small>
@@ -303,7 +303,7 @@
 
               <div class="column has-text-centered">
                 <div class="publication-links">
-                  <!-- Paper PDF（外链，不是本地 pdf 文件） -->
+                  <!-- Paper PDF（外链） -->
                   <span class="link-block">
                     <a href="https://arxiv.org/pdf/2511.18415.pdf" target="_blank"
                        class="external-link button is-normal is-rounded is-dark">
@@ -314,10 +314,9 @@
                     </a>
                   </span>
 
-                  <!-- Code -->
+                  <!-- Code：已改为你的代码仓库 -->
                   <span class="link-block">
-                    <!-- TODO: 把链接改成你们代码仓库的地址 -->
-                    <a href="https://github.com/YOUR_CODE_REPOSITORY" target="_blank"
+                    <a href="https://github.com/CiaranZ/SEKD" target="_blank"
                        class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fab fa-github"></i>
@@ -346,27 +345,33 @@
       </div>
     </section>
 
-    <!-- Paper abstract -->
+    <!-- Teaser 图片：整个摘要章节前面 -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <div class="teaser-figure-wrapper">
+              <img
+                src="static/images/7833a37b7e5ff0f37138ae35c7f558a3.png"
+                alt="Overview of our hierarchical VQA formulation and SEKD framework"
+                class="teaser-figure"
+              >
+            </div>
+            <p class="teaser-caption">
+              Overview of our hierarchical VQA formulation and Self-Elicited Knowledge Distillation (SEKD) framework.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Paper abstract（只文字，没有图片） -->
     <section class="section hero is-light">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
             <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
-
-              <!-- 页面唯一引用图片的地方 -->
-              <div class="abstract-figure-wrapper">
-                <img
-                  src="static/images/7833a37b7e5ff0f37138ae35c7f558a3.png"
-                  alt="Overview of our hierarchical VQA formulation and SEKD framework"
-                  class="abstract-figure"
-                >
-                <p class="abstract-caption">
-                  Overview of our hierarchical VQA formulation and Self-Elicited Knowledge Distillation (SEKD) framework.
-                </p>
-              </div>
-
-              <!-- 摘要正文 -->
               <p>
                 Vision-language models (VLMs) hold extensive taxonomic knowledge, yet they often struggle on hierarchical
                 visual question answering, where predictions must remain consistent along a coarse-to-fine label path.
