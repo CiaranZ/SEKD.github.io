@@ -30,7 +30,7 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <!-- 没有就删掉这两行 -->
+  <!-- 如无 Twitter，可删掉这两行 -->
   <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
   <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
   <meta name="twitter:title" content="Self-Empowering VLMs: Achieving Hierarchical Consistency via Self-Elicited Knowledge Distillation">
@@ -99,102 +99,138 @@
   
   <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ScholarlyArticle",
-  "headline": "Self-Empowering VLMs: Achieving Hierarchical Consistency via Self-Elicited Knowledge Distillation",
-  "description": "Self-Empowering VLMs uses Self-Empowering Knowledge Distillation to transfer hierarchical multi-step reasoning from a teacher VLM to a compact student model.",
-  "author": [
-    {
-      "@type": "Person",
-      "name": "Wei Yang",
-      "affiliation": {
-        "@type": "Organization",
-        "name": "Department of Computer, North China Electric Power University, Baoding, China"
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Self-Empowering VLMs: Achieving Hierarchical Consistency via Self-Elicited Knowledge Distillation",
+    "description": "Self-Empowering VLMs uses Self-Empowering Knowledge Distillation to transfer hierarchical multi-step reasoning from a teacher VLM to a compact student model.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Wei Yang",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Department of Computer, North China Electric Power University, Baoding, China"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Yiran Zhu",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Department of Computer, North China Electric Power University, Baoding, China"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Zilin Li",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "School of Information and Intelligent Science, Donghua University, Shanghai, China"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Xunjia Zhang",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Department of Computer, North China Electric Power University, Baoding, China"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Hongtao Wang",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Department of Computer, North China Electric Power University, Baoding, China"
+        }
       }
+    ],
+    "datePublished": "2025-11-23",
+    "publisher": {
+      "@type": "Organization",
+      "name": "arXiv"
     },
-    {
-      "@type": "Person",
-      "name": "Yiran Zhu",
-      "affiliation": {
-        "@type": "Organization",
-        "name": "Department of Computer, North China Electric Power University, Baoding, China"
+    "url": "https://ciaranz.github.io/SEKD.github.io/",
+    "image": "https://ciaranz.github.io/SEKD.github.io/static/images/social_preview.png",
+    "keywords": [
+      "vision-language models",
+      "knowledge distillation",
+      "hierarchical VQA",
+      "multi-step reasoning",
+      "self-elicited knowledge"
+    ],
+    "abstract": "Vision-language models (VLMs) contain rich taxonomic knowledge, but often fail on hierarchical visual question answering, where predictions must stay consistent along a coarse-to-fine path. We compare several inference paradigms and show that conditioning each step on previous answers is highly effective, yet the main bottleneck is maintaining cross-level state rather than recalling labels. To address this, we propose Self-Empowering Knowledge Distillation (SEKD), where a multi-step teacher VLM supervises a single-pass student using its own hard labels, soft distributions and hidden states, leading to large improvements in hierarchical consistency and strong gains on both in-domain and zero-shot taxonomies, as well as on challenging mathematical reasoning benchmarks, all without additional human annotations.",
+    "citation": "Yang et al., Self-Empowering VLMs: Achieving Hierarchical Consistency via Self-Empowering Knowledge Distillation, arXiv:2511.18415, 2025.",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://ciaranz.github.io/SEKD.github.io/"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Vision-language models"
+      },
+      {
+        "@type": "Thing",
+        "name": "Knowledge distillation"
       }
-    },
-    {
-      "@type": "Person",
-      "name": "Zilin Li",
-      "affiliation": {
-        "@type": "Organization",
-        "name": "School of Information and Intelligent Science, Donghua University, Shanghai, China"
-      }
-    },
-    {
-      "@type": "Person",
-      "name": "Xunjia Zhang",
-      "affiliation": {
-        "@type": "Organization",
-        "name": "Department of Computer, North China Electric Power University, Baoding, China"
-      }
-    },
-    {
-      "@type": "Person",
-      "name": "Hongtao Wang",
-      "affiliation": {
-        "@type": "Organization",
-        "name": "Department of Computer, North China Electric Power University, Baoding, China"
-      }
-    }
-  ],
-  "datePublished": "2025-11-23",
-  "publisher": {
-    "@type": "Organization",
-    "name": "arXiv"
-  },
-  "url": "https://ciaranz.github.io/SEKD.github.io/",
-  "image": "https://ciaranz.github.io/SEKD.github.io/static/images/social_preview.png",
-  "keywords": [
-    "vision-language models",
-    "knowledge distillation",
-    "hierarchical VQA",
-    "multi-step reasoning",
-    "self-elicited knowledge"
-  ],
-  "abstract": "Vision-language models (VLMs) contain rich taxonomic knowledge, but often fail on hierarchical visual question answering, where predictions must stay consistent along a coarse-to-fine path. We compare several inference paradigms and show that conditioning each step on previous answers is highly effective, yet the main bottleneck is maintaining cross-level state rather than recalling labels. To address this, we propose Self-Empowering Knowledge Distillation (SEKD), where a multi-step teacher VLM supervises a single-pass student using its own hard labels, soft distributions and hidden states, leading to large improvements in hierarchical consistency and strong gains on both in-domain and zero-shot taxonomies, as well as on challenging mathematical reasoning benchmarks, all without additional human annotations.",
-  "citation": "Yang et al., Self-Empowering VLMs: Achieving Hierarchical Consistency via Self-Empowering Knowledge Distillation, arXiv:2511.18415, 2025.",
-  "isAccessibleForFree": true,
-  "license": "https://creativecommons.org/licenses/by/4.0/",
-  "mainEntity": {
-    "@type": "WebPage",
-    "@id": "https://ciaranz.github.io/SEKD.github.io/"
-  },
-  "about": [
-    {
-      "@type": "Thing",
-      "name": "Vision-language models"
-    },
-    {
-      "@type": "Thing",
-      "name": "Knowledge distillation"
-    }
-  ]
-}
+    ]
+  }
   </script>
   
   <!-- Website/Organization Structured Data -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "North China Electric Power University & Donghua University",
-  "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-  "logo": "https://ciaranz.github.io/SEKD.github.io/static/images/favicon.ico",
-  "sameAs": [
-    "https://twitter.com/YOUR_TWITTER_HANDLE",
-    "https://github.com/CiaranZ"
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "North China Electric Power University & Donghua University",
+    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
+    "logo": "https://ciaranz.github.io/SEKD.github.io/static/images/favicon.ico",
+    "sameAs": [
+      "https://twitter.com/YOUR_TWITTER_HANDLE",
+      "https://github.com/CiaranZ"
+    ]
+  }
   </script>
+
+  <!-- 自定义样式：摘要开头的 PDF 大图（裁“白边”效果） -->
+  <style>
+    .cvpr-figure-wrapper {
+      max-width: 900px;
+      margin: 0 auto 1.5rem;
+      overflow: hidden;          /* 裁掉超出容器的部分 */
+      border-radius: 12px;       /* 看起来更像一张图 */
+    }
+
+    .cvpr-figure {
+      width: 115%;               /* 宽一点，把左右白边推出去 */
+      height: 360px;             /* 控制显示高度，可按需要微调 */
+      border: none;
+      transform: scale(1.12);    /* 放大一点，用来“裁”上下白边 */
+      transform-origin: center center; /* 以中间为缩放基准，类似 trim top/bottom */
+    }
+
+    .cvpr-caption {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .cvpr-figure-wrapper {
+        border-radius: 8px;
+      }
+      .cvpr-figure {
+        width: 130%;
+        height: 260px;
+        transform: scale(1.18);
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -336,8 +372,6 @@
       </div>
     </section>
 
-    <!-- 这里开始就是没有视频的版本 -->
-
     <!-- Paper abstract -->
     <section class="section hero is-light">
       <div class="container is-max-desktop">
@@ -345,6 +379,20 @@
           <div class="column is-four-fifths">
             <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
+
+              <!-- 摘要开头的 PDF “图片”，模拟 LaTeX figure* + trim 裁白边 -->
+              <div class="cvpr-figure-wrapper">
+                <iframe
+                  src="static/images/cvpr.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                  class="cvpr-figure"
+                  title="Overview of our hierarchical VQA formulation and SEKD framework"
+                ></iframe>
+                <p class="cvpr-caption">
+                  Overview of our hierarchical VQA formulation and Self-Elicited Knowledge Distillation (SEKD) framework.
+                </p>
+              </div>
+
+              <!-- 摘要正文 -->
               <p>
                 Vision-language models (VLMs) hold extensive taxonomic knowledge, yet they often struggle on hierarchical
                 visual question answering, where predictions must remain consistent along a coarse-to-fine label path.
