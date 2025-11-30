@@ -188,6 +188,9 @@
 
   <!-- 自定义样式：teaser 图片（摘要章节前） -->
   <style>
+    .teaser-section {
+      background-color: #ffffff; /* 和上面的 hero 一样白色，和下方摘要的浅灰区分开 */
+    }
     .teaser-figure-wrapper {
       max-width: 900px;
       margin: 0 auto 1.5rem;
@@ -345,8 +348,8 @@
       </div>
     </section>
 
-    <!-- Teaser 图片：整个摘要章节前面 -->
-    <section class="section hero is-light">
+    <!-- Teaser 图片：整个摘要章节前面，白色背景 -->
+    <section class="section teaser-section">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
@@ -365,7 +368,7 @@
       </div>
     </section>
 
-    <!-- Paper abstract（只文字，没有图片） -->
+    <!-- Paper abstract（浅灰背景，只文字，没有图片） -->
     <section class="section hero is-light">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
@@ -389,8 +392,6 @@
       </div>
     </section>
     <!-- End paper abstract -->
-
-    <!-- 其他图片 / 本地 PDF section 已全部删除 -->
 
     <!--BibTex citation -->
     <section class="section" id="BibTeX">
