@@ -185,7 +185,7 @@
 
   <!-- Custom Styles -->
   <style>
-    /* 顶部 hero 区块背景：比之前更明显的淡蓝渐变，用 !important 防止被覆盖 */
+    /* 顶部 hero 区块背景 */
     .hero-header {
       background: linear-gradient(180deg, #e0e7ff 0%, #f3f4ff 40%, #ffffff 100%) !important;
       position: relative;
@@ -215,8 +215,13 @@
     .teaser-section {
       background-color: #ffffff;
     }
+    /* 让 teaser 这一块容器更宽一点 */
+    .teaser-section .container {
+      max-width: 1200px;
+    }
+    /* 图片容器放大一些 */
     .teaser-figure-wrapper {
-      max-width: 900px;
+      max-width: 1200px;
       margin: 0 auto 1.5rem;
     }
     .teaser-figure {
@@ -248,17 +253,16 @@
           <div class="columns is-centered">
             <div class="column has-text-centered">
 
-              <!-- 大标题：只包含 Self-Empowering VLMs，渐变在 Self-Empowering 上 -->
+              <!-- 大标题 -->
               <h1 class="title is-1 publication-title" style="margin-bottom:0.5rem;">
                 <span class="gradient-title">Self-Empowering</span> VLMs
               </h1>
-              <!-- 副标题：小一号 -->
+              <!-- 副标题 -->
               <h2 class="subtitle is-4" style="margin-top:0;">
                 Achieving Hierarchical Consistency via Self-Elicited Knowledge Distillation
               </h2>
 
               <div class="is-size-5 publication-authors">
-                <!-- Authors -->
                 <span class="author-block">
                   <a href="#" target="_blank">Wei Yang</a><sup>*</sup>,
                 </span>
@@ -277,7 +281,6 @@
               </div>
 
               <div class="is-size-5 publication-authors">
-                <!-- Affiliations / arXiv info -->
                 <span class="author-block">
                   <sup>1</sup> Department of Computer, North China Electric Power University, Baoding, China<br>
                   <sup>2</sup> School of Information and Intelligent Science, Donghua University, Shanghai, China<br>
@@ -292,7 +295,6 @@
 
               <div class="column has-text-centered">
                 <div class="publication-links">
-                  <!-- Paper PDF -->
                   <span class="link-block">
                     <a href="https://arxiv.org/pdf/2511.18415.pdf" target="_blank"
                        class="external-link button is-normal is-rounded is-dark">
@@ -303,7 +305,6 @@
                     </a>
                   </span>
 
-                  <!-- Code -->
                   <span class="link-block">
                     <a href="https://github.com/CiaranZ/SEKD" target="_blank"
                        class="external-link button is-normal is-rounded is-dark">
@@ -314,7 +315,6 @@
                     </a>
                   </span>
 
-                  <!-- arXiv -->
                   <span class="link-block">
                     <a href="https://arxiv.org/abs/2511.18415" target="_blank"
                        class="external-link button is-normal is-rounded is-dark">
@@ -334,9 +334,9 @@
       </div>
     </section>
 
-    <!-- Teaser 图片：整个摘要章节前面，白色背景 -->
+    <!-- Teaser 图片 -->
     <section class="section teaser-section">
-      <div class="container is-max-desktop">
+      <div class="container">
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
             <div class="teaser-figure-wrapper">
@@ -381,7 +381,6 @@
         </div>
       </div>
     </section>
-    <!-- End paper abstract -->
 
     <!--BibTex citation -->
     <section class="section" id="BibTeX">
