@@ -257,7 +257,7 @@
               <h1 class="title is-1 publication-title" style="margin-bottom:0.5rem;">
                 <span class="gradient-title">Self-Empowering</span> VLMs
               </h1>
-              <!-- 副标题 -->
+              <!-- 副标题加粗 -->
               <h2 class="subtitle is-4" style="margin-top:0;">
                 <strong>Achieving Hierarchical Consistency via Self-Elicited Knowledge Distillation</strong>
               </h2>
@@ -279,12 +279,13 @@
                   <a href="#" target="_blank">Hongtao Wang</a><sup>†</sup>
                 </span>
               </div>
-              
+
               <div class="is-size-5 publication-authors has-text-weight-normal has-text-grey-dark">
-                  <span class="author-block">
-                    <sup>1</sup> Department of Computer, North China Electric Power University, Baoding, China<br>
-                    <sup>2</sup> School of Information and Intelligent Science, Donghua University, Shanghai, China<br>
-                  </span>
+                <span class="author-block">
+                  <sup>1</sup> Department of Computer, North China Electric Power University, Baoding, China<br>
+                  <sup>2</sup> School of Information and Intelligent Science, Donghua University, Shanghai, China<br>
+                  arXiv preprint arXiv:2511.18415 (2025)
+                </span>
                 <span class="eql-cntrb">
                   <small>
                     <br><sup>*</sup>Co-first authors &nbsp;&nbsp;
@@ -347,7 +348,9 @@
               >
             </div>
             <p class="teaser-caption">
-              Overview of our hierarchical VQA setup and Self-Elicited Knowledge Distillation (SEKD): a taxonomic query is flattened into a sequence of level-wise VQA questions along the taxonomy; the original VLM answers each level independently and often yields an inconsistent path, while SEKD lets the model solve easy levels first and reuse them to guide later ones, producing a post-SEKD VLM that follows a coherent coarse-to-fine hierarchy.
+              Overview of our hierarchical VQA setup and Self-Elicited Knowledge Distillation (SEKD): a taxonomic query
+              is flattened into a sequence of level-wise VQA questions along the taxonomy; standard VLMs often produce
+              inconsistent paths, while SEKD encourages a coherent coarse-to-fine trajectory.
             </p>
           </div>
         </div>
@@ -381,6 +384,86 @@
         </div>
       </div>
     </section>
+    <!-- End paper abstract -->
+
+    <section class="section" id="problem">
+      <!-- 去掉 is-max-desktop，让容器更宽 -->
+      <div class="container">
+        <div class="columns is-centered">
+          <!-- 改成 10/12 宽，而不是 four-fifths -->
+          <div class="column is-10">
+            <h2 class="title is-3 has-text-centered">Problem &amp; Diagnosis</h2>
+    
+            <div class="content">
+              <p class="has-text-justified">
+                We investigate <strong>why vision-language models (VLMs) fail at hierarchical VQA</strong> by changing only
+                the inference protocol while keeping the model, dataset, and compute fixed. On iNat-Animal with
+                <strong>LLaVA-OV-7B</strong>, we require the model to emit a complete taxonomy path for each image and compare
+                three protocols—<strong>Joint Invocation</strong>, <strong>Independent Levels</strong>, and
+                <strong>Conditioned Steps</strong>—under five metrics:
+                <strong>Hierarchical-Consistency Accuracy (HCA)</strong>, <strong>Leaf Accuracy (LeafAcc)</strong>,
+                <strong>Transition-Order Ratio (TOR)</strong>, <strong>Position Overlap Ratio (POR)</strong>, and
+                <strong>Strict Position Overlap Ratio (S-POR)</strong>.
+              </p>
+    
+              <div class="columns is-multiline">
+                <div class="column is-4">
+                  <div class="box" style="height:100%;">
+                    <p class="has-text-weight-semibold">Diagnostic protocol</p>
+                    <p class="is-size-7 has-text-justified">
+                      We run a controlled comparison on <strong>iNat-Animal</strong> with <strong>LLaVA-OV-7B</strong>, changing
+                      only the inference paradigm. <strong>Joint Invocation</strong> invokes the model once and autoregressively
+                      emits all levels in a single turn, but is very weak (<strong>HCA 0.05%</strong>,
+                      <strong>LeafAcc 25.35%</strong>). <strong>Independent Levels</strong> issues level-specific questions
+                      without cross-level conditioning and brings limited gains (HCA <strong>+4.55</strong> pp,
+                      LeafAcc <strong>+2.10</strong> pp). In contrast, <strong>Conditioned Steps</strong>, which conditions each
+                      level on the previous answer, yields the largest improvements (HCA <strong>+8.80</strong> pp,
+                      LeafAcc <strong>+7.10</strong> pp), and <strong>TOR</strong>, <strong>POR</strong>, and
+                      <strong>S-POR</strong> each increase by about 30–44 percentage points.
+                    </p>
+                  </div>
+                </div>
+    
+                <div class="column is-4">
+                  <div class="box" style="height:100%;">
+                    <p class="has-text-weight-semibold">Depth-wise and conditional analyses</p>
+                    <p class="is-size-7 has-text-justified">
+                      To locate where the gains arise, we analyze performance by depth and conditioning. Across levels 2–6,
+                      <strong>Conditioned Steps</strong> consistently outperforms <strong>Independent Levels</strong> and
+                      <strong>Joint Invocation</strong>, with especially large margins at certain depths. We characterize
+                      parent–child coupling via a conditional accuracy gap
+                      <span style="white-space:nowrap;">Δ<sub>ℓ</sub> = Acc<sub>ℓ+1 | correct<sub>ℓ</sub></sub> −
+                      Acc<sub>ℓ+1 | error<sub>ℓ</sub></sub></span>:
+                      a larger Δ<sub>ℓ</sub> means correctness at level ℓ has stronger influence on level ℓ+1. Consistent with
+                      the depth-wise curves, Conditioned Steps achieves noticeably larger gains over Independent Levels
+                      precisely at these high-coupling levels.
+                    </p>
+                  </div>
+                </div>
+    
+                <div class="column is-4">
+                  <div class="box" style="height:100%;">
+                    <p class="has-text-weight-semibold">Takeaway and design implication</p>
+                    <p class="is-size-7 has-text-justified">
+                      Overall, our diagnosis shows that current VLMs are limited not by missing taxonomic labels, but by an
+                      inability to organize interdependent sub-questions into a <strong>stepwise reasoning process</strong>,
+                      which leads to depth-dependent degradation and cross-level inconsistency. <strong>Conditioned Steps</strong>
+                      propagates the parent decision downward, restricts candidates to the corresponding subtree, and imposes a
+                      path-level prior, jointly improving TOR, POR, S-POR, and in turn HCA and LeafAcc. This insight motivates
+                      SEKD: first run explicit, parent-conditioned stepwise reasoning to extract cross-level signals, then use
+                      self-elicited distillation to encode the “choose the branch, then specialize” mechanism into a single-pass
+                      model without extra inference cost.
+                    </p>
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <!--BibTex citation -->
     <section class="section" id="BibTeX">
