@@ -279,6 +279,7 @@
                   <a href="#" target="_blank">Hongtao Wang</a><sup>†</sup>
                 </span>
               </div>
+              
               <div class="is-size-5 publication-authors has-text-weight-normal has-text-grey-dark">
                   <span class="author-block">
                     <sup>1</sup> Department of Computer, North China Electric Power University, Baoding, China<br>
@@ -333,82 +334,53 @@
       </div>
     </section>
 
-
-    <section class="section">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
+    <!-- Teaser 图片 -->
+    <section class="section teaser-section">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
-            <h2 class="title is-3 has-text-centered">Introduction</h2>
-            <div class="content has-text-justified">
-              <p>
-                Vision-language models (VLMs) are good at open-ended recognition and QA, but they often break down on hierarchical visual QA, where predictions must form a coherent coarse-to-fine path in a taxonomy. In this work, we:
-              </p>
-              <ul>
-                <li>
-                  Formulate hierarchical VQA as predicting a full taxonomy path and systematically compare different inference paradigms (single-pass vs. multi-step, conditioned vs. unconditioned).
-                </li>
-                <li>
-                  Diagnose that the main bottleneck is not missing taxonomic labels, but the inability of standard VLMs to maintain a consistent cross-level state across the hierarchy.
-                </li>
-                <li>
-                  Propose <strong>Self-Elicited Knowledge Distillation (SEKD)</strong>, where a VLM first acts as its own multi-step teacher and then trains a single-pass student using only self-generated signals, without any human labels or external tools.
-                </li>
-                <li>
-                  Show that SEKD greatly improves hierarchical path consistency and transfers to unseen taxonomies and challenging mathematical reasoning benchmarks, while keeping single-pass inference cost.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="overview" class="section hero is-light">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column is-four-fifths has-text-centered">
-    
-            <!-- 标题 -->
-            <h2 class="title is-3">Overview</h2>
-    
-            <!-- 大图 -->
-            <div class="teaser-figure-wrapper" style="margin-top:1.5rem; margin-bottom:1.5rem;">
+            <div class="teaser-figure-wrapper">
               <img
                 src="static/images/7833a37b7e5ff0f37138ae35c7f558a3.png"
-                alt="Overview of our hierarchical VQA setting and SEKD framework"
+                alt="Overview of our hierarchical VQA formulation and SEKD framework"
                 class="teaser-figure"
               >
             </div>
-    
-            <!-- 下面的文字区：介绍实验块 + 效果 -->
-            <div class="content has-text-justified" style="text-align:left; margin:0 auto; max-width: 52rem;">
-              <p>
-                We evaluate SEKD on three regimes and summarize the overall behaviour in this figure. In hierarchical visual QA, a query is decomposed into a sequence of level-wise questions along a taxonomy, and predictions are required to form a single consistent path. Standard VLMs often make locally plausible but globally inconsistent choices, jumping across branches, whereas SEKD enforces a more stable cross-level state.
-              </p>
-              <ul>
-                <li>
-                  <strong>In-domain hierarchical VQA.</strong>
-                  Across our hierarchical VQA benchmarks, SEKD improves hierarchical path consistency (HCA) by up to
-                  <strong>+29.50</strong> points over strong single-pass VLM baselines, while keeping single-pass inference cost.
-                </li>
-                <li>
-                  <strong>Zero-shot new taxonomies.</strong>
-                  A student trained via SEKD on one taxonomy transfers to an unseen taxonomy, raising zero-shot HCA from
-                  <strong>4.15%</strong> to <strong>42.26%</strong> without any additional labels.
-                </li>
-                <li>
-                  <strong>Mathematical reasoning.</strong>
-                  Applying the same self-elicited distillation strategy to challenging math reasoning benchmarks yields consistent
-                  accuracy gains over the base VLM, showing that SEKD is not limited to taxonomies.
-                </li>
-              </ul>
-            </div>
-    
+            <p class="teaser-caption">
+              Overview of our hierarchical VQA setup and Self-Elicited Knowledge Distillation (SEKD): a taxonomic query is flattened into a sequence of level-wise VQA questions along the taxonomy; the original VLM answers each level independently and often yields an inconsistent path, while SEKD lets the model solve easy levels first and reuse them to guide later ones, producing a post-SEKD VLM that follows a coherent coarse-to-fine hierarchy.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Paper abstract -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Vision-language models (VLMs) possess rich knowledge but often fail on hierarchical understanding tasks,
+                where the goal is to predict a coarse-to-fine taxonomy path that remains consistent across all levels.
+                We compare three inference paradigms for hierarchical VQA and find that stepwise reasoning, when conditioned
+                on prior answers, significantly outperforms single-pass prompting. Further analysis indicates that the main
+                limitation of current VLMs is their inability to maintain cross-level state, rather than a lack of taxonomic
+                knowledge. Motivated by this diagnosis, we propose Self-Elicited Knowledge Distillation (SEKD), which requires
+                no human labels or external tools: the same VLM is prompted to reason step by step and act as a teacher by
+                exposing its hard labels, soft distributions, and decoder hidden states, while a single-pass student distills
+                these signals. The student VLM remains efficient while approaching the accuracy of its multi-step teacher.
+                It improves in-domain path consistency (HCA) by up to +29.50 percentage points, raises zero-shot HCA on an unseen
+                taxonomy from 4.15% to 42.26%, and yields gains on challenging mathematical benchmarks. Because all supervision
+                is self-elicited, SEKD scales to new taxonomies and datasets without annotation cost, providing a practical route
+                to imbue compact VLMs with dependency-aware multi-step reasoning.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!--BibTex citation -->
     <section class="section" id="BibTeX">
