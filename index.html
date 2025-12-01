@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <!-- Primary Meta Tags -->
-  <meta name="title" content="Self-Empowering VLMs: Achieving Hierarchical Consistency via Self-Elicited Knowledge Distillation - Wei Yang et al.">
+  <meta name="title" content="Self-Empowering VLMs: Achieving Hierarchical Consistency via Self-Empowering Knowledge Distillation - Wei Yang et al.">
   <meta name="description" content="Self-Empowering VLMs uses Self-Empowering Knowledge Distillation to transfer hierarchical multi-step reasoning from a teacher VLM to a compact student model.">
   <meta name="keywords" content="vision-language models, knowledge distillation, hierarchical VQA, multi-step reasoning, visual question answering, self-elicited knowledge">
   <meta name="author" content="Wei Yang, Yiran Zhu, Zilin Li, Xunjia Zhang, Hongtao Wang">
@@ -57,7 +57,7 @@
   <link rel="preconnect" href="https://documentcloud.adobe.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-  <title>Self-Empowering VLMs: Achieving Hierarchical Consistency via Self-Elicited Knowledge Distillation - Wei Yang et al. | Academic Research</title>
+  <title>Self-Empowering VLMs: Achieving Hierarchical Consistency via Self-Empowering Knowledge Distillation - Wei Yang et al. | Academic Research</title>
   
   <!-- 不再显式设置 favicon / apple-touch-icon，以避免额外图片引用 -->
   
@@ -216,50 +216,6 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: 换成你们自己的相关工作，或者把整个 more-works-container 删掉 -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 1</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <main id="main-content">
     <!-- 顶部 hero：标题、作者、按钮 -->
     <section class="hero">
@@ -295,6 +251,7 @@
                 <span class="author-block">
                   <sup>1</sup> Department of Computer, North China Electric Power University, Baoding, China<br>
                   <sup>2</sup> School of Information and Intelligent Science, Donghua University, Shanghai, China<br>
+                  arXiv preprint arXiv:2511.18415 (2025)
                 </span>
                 <span class="eql-cntrb">
                   <small>
@@ -317,7 +274,7 @@
                     </a>
                   </span>
 
-                  <!-- Code：已改为你的代码仓库 -->
+                  <!-- Code：你的代码仓库 -->
                   <span class="link-block">
                     <a href="https://github.com/CiaranZ/SEKD" target="_blank"
                        class="external-link button is-normal is-rounded is-dark">
@@ -376,15 +333,19 @@
             <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
               <p>
-                Vision-language models (VLMs) hold extensive taxonomic knowledge, yet they often struggle on hierarchical
-                visual question answering, where predictions must remain consistent along a coarse-to-fine label path.
-                We compare several inference paradigms and find that conditioning each step on previous answers is
-                particularly effective, while the key limitation of current VLMs is maintaining cross-level state,
-                rather than simply recalling labels. To overcome this, we propose Self-Empowering Knowledge Distillation
-                (SEKD), in which a multi-step teacher VLM supervises a single-pass student through its own hard labels,
-                soft distributions and hidden states. The resulting student model stays efficient while achieving large
-                gains in hierarchical consistency on in-domain and zero-shot taxonomies, and also improves performance
-                on challenging mathematical reasoning benchmarks, all without additional human annotations.
+                Vision-language models (VLMs) possess rich knowledge but often fail on hierarchical understanding tasks,
+                where the goal is to predict a coarse-to-fine taxonomy path that remains consistent across all levels.
+                We compare three inference paradigms for hierarchical VQA and find that stepwise reasoning, when conditioned
+                on prior answers, significantly outperforms single-pass prompting. Further analysis indicates that the main
+                limitation of current VLMs is their inability to maintain cross-level state, rather than a lack of taxonomic
+                knowledge. Motivated by this diagnosis, we propose Self-Elicited Knowledge Distillation (SEKD), which requires
+                no human labels or external tools: the same VLM is prompted to reason step by step and act as a teacher by
+                exposing its hard labels, soft distributions, and decoder hidden states, while a single-pass student distills
+                these signals. The student VLM remains efficient while approaching the accuracy of its multi-step teacher.
+                It improves in-domain path consistency (HCA) by up to +29.50 percentage points, raises zero-shot HCA on an unseen
+                taxonomy from 4.15% to 42.26%, and yields gains on challenging mathematical benchmarks. Because all supervision
+                is self-elicited, SEKD scales to new taxonomies and datasets without annotation cost, providing a practical route
+                to imbue compact VLMs with dependency-aware multi-step reasoning.
               </p>
             </div>
           </div>
