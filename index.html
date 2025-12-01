@@ -333,6 +333,36 @@
       </div>
     </section>
 
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3 has-text-centered">Introduction</h2>
+            <div class="content has-text-justified">
+              <p>
+                Vision-language models (VLMs) are good at open-ended recognition and QA, but they often break down on hierarchical visual QA, where predictions must form a coherent coarse-to-fine path in a taxonomy. In this work, we:
+              </p>
+              <ul>
+                <li>
+                  Formulate hierarchical VQA as predicting a full taxonomy path and systematically compare different inference paradigms (single-pass vs. multi-step, conditioned vs. unconditioned).
+                </li>
+                <li>
+                  Diagnose that the main bottleneck is not missing taxonomic labels, but the inability of standard VLMs to maintain a consistent cross-level state across the hierarchy.
+                </li>
+                <li>
+                  Propose <strong>Self-Elicited Knowledge Distillation (SEKD)</strong>, where a VLM first acts as its own multi-step teacher and then trains a single-pass student using only self-generated signals, without any human labels or external tools.
+                </li>
+                <li>
+                  Show that SEKD greatly improves hierarchical path consistency and transfers to unseen taxonomies and challenging mathematical reasoning benchmarks, while keeping single-pass inference cost.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Teaser 图片 -->
     <section class="section teaser-section">
       <div class="container">
