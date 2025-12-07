@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <!-- Primary Meta Tags -->
   <meta name="title" content="Self-Empowering VLMs: Achieving Hierarchical Consistency via Self-Empowering Knowledge Distillation - Wei Yang et al.">
   <meta name="description" content="Self-Empowering VLMs uses Self-Empowering Knowledge Distillation to transfer hierarchical multi-step reasoning from a teacher VLM to a compact student model.">
   <meta name="keywords" content="vision-language models, knowledge distillation, hierarchical VQA, multi-step reasoning, visual question answering, self-elicited knowledge">
@@ -12,7 +11,6 @@
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
   
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="North China Electric Power University &amp; Donghua University">
   <meta property="og:title" content="Self-Empowering VLMs: Achieving Hierarchical Consistency via Self-Empowering Knowledge Distillation">
@@ -24,14 +22,12 @@
   <meta property="article:tag" content="vision-language models">
   <meta property="article:tag" content="knowledge distillation">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
   <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
   <meta name="twitter:title" content="Self-Empowering VLMs: Achieving Hierarchical Consistency via Self-Empowering Knowledge Distillation">
   <meta name="twitter:description" content="Self-Empowering VLMs uses Self-Empowering Knowledge Distillation to transfer hierarchical multi-step reasoning from a teacher VLM to a compact student model.">
 
-  <!-- Academic/Research Specific -->
   <meta name="citation_title" content="Self-Empowering VLMs: Achieving Hierarchical Consistency via Self-Empowering Knowledge Distillation">
   <meta name="citation_author" content="Yang, Wei">
   <meta name="citation_author" content="Zhu, Yiran">
@@ -43,13 +39,11 @@
   <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2511.18415.pdf">
   <meta name="citation_doi" content="10.48550/arXiv.2511.18415">
   
-  <!-- Additional SEO -->
   <meta name="theme-color" content="#2563eb">
   <meta name="msapplication-TileColor" content="#2563eb">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   
-  <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://ajax.googleapis.com">
@@ -58,11 +52,9 @@
 
   <title>Self-Empowering VLMs: Achieving Hierarchical Consistency via Self-Empowering Knowledge Distillation - Wei Yang et al. | Academic Research</title>
   
-  <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
   
-  <!-- Non-critical CSS - Load asynchronously -->
   <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -75,10 +67,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
   
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- JS -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
@@ -86,7 +76,6 @@
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
   
-  <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -169,7 +158,6 @@
   }
   </script>
   
-  <!-- Website/Organization Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -183,7 +171,6 @@
   }
   </script>
 
-  <!-- Custom Styles -->
   <style>
     /* 顶部 hero 区块背景 */
     .hero-header {
@@ -236,28 +223,38 @@
       color: #555;
       margin-top: 0.5rem;
     }
+
+    /* --- 新增：作者列表链接样式控制 --- */
+    .publication-authors a {
+      text-decoration: underline !important; /* 强制有链接的名字显示下划线 */
+      color: inherit;
+    }
+    .publication-authors a:hover {
+      color: #3273dc; /* 鼠标悬停变蓝 */
+    }
+    .publication-authors .no-link {
+      text-decoration: none !important; /* 没有链接的名字无下划线 */
+      cursor: default; /* 鼠标样式为普通指针 */
+      color: inherit;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Scroll to Top Button -->
   <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
 
   <main id="main-content">
-    <!-- 顶部 hero：标题、作者、按钮 -->
     <section class="hero hero-header">
       <div class="hero-body">
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column has-text-centered">
 
-              <!-- 大标题 -->
               <h1 class="title is-1 publication-title" style="margin-bottom:0.5rem;">
                 <span class="gradient-title">Self-Empowering</span> VLMs
               </h1>
-              <!-- 副标题 -->
               <h2 class="subtitle is-4" style="margin-top:0;">
                 <strong>Achieving Hierarchical Consistency via Self-Elicited Knowledge Distillation</strong>
               </h2>
@@ -267,16 +264,16 @@
                   <a href="https://miemie0922.github.io/weiyang.github.io/" target="_blank">Wei Yang</a><sup>*</sup>,
                 </span>
                 <span class="author-block">
-                  <a href="#" target="_blank">Yiran Zhu</a><sup>*</sup>,
+                  <span class="no-link">Yiran Zhu</span><sup>*</sup>,
                 </span>
                 <span class="author-block">
-                  <a href="#" target="_blank">Zilin Li</a>,
+                  <span class="no-link">Zilin Li</span>,
                 </span>
                 <span class="author-block">
-                  <a href="#" target="_blank">Xunjia Zhang</a>,
+                  <span class="no-link">Xunjia Zhang</span>,
                 </span>
                 <span class="author-block">
-                  <a href="#" target="_blank">Hongtao Wang</a><sup>†</sup>
+                  <span class="no-link">Hongtao Wang</span><sup>†</sup>
                 </span>
               </div>
               
@@ -334,7 +331,6 @@
       </div>
     </section>
 
-    <!-- Teaser 图片 -->
     <section class="section teaser-section">
       <div class="container">
         <div class="columns is-centered has-text-centered">
@@ -354,7 +350,6 @@
       </div>
     </section>
 
-    <!-- Paper abstract -->
     <section class="section hero is-light">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
@@ -382,7 +377,6 @@
       </div>
     </section>
 
-    <!--BibTex citation -->
     <section class="section" id="BibTeX">
       <div class="container is-max-desktop content">
         <div class="bibtex-header">
@@ -402,8 +396,7 @@
 }</code></pre>
       </div>
     </section>
-    <!--End BibTeX citation -->
-  </main>
+    </main>
 
   <footer class="footer">
     <div class="container">
